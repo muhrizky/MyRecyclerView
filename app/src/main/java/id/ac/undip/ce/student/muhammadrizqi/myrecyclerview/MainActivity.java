@@ -2,6 +2,7 @@ package id.ac.undip.ce.student.muhammadrizqi.myrecyclerview;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
@@ -45,11 +46,12 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()){
             case R.id.action_list:
+                showRecyclerlist();
 
                 break;
 
             case R.id.action_grid:
-
+                showRecyclerGrid();
                 break;
 
             case R.id.action_cardview:
@@ -57,5 +59,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showRecyclerGrid(){
+        rvCategory.setLayoutManager(new GridLayoutManager(this, 2));
+        GridPresidentAdapter gridPresidentAdapter = new GridPresidentAdapter(this);
+        gridPresidentAdapter.setListPresident(list);
+        rvCategory.setAdapter(gridPresidentAdapter);
     }
 }
