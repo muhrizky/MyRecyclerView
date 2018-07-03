@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.action_cardview:
-
+                showRecylerCardView();
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -66,5 +66,12 @@ public class MainActivity extends AppCompatActivity {
         GridPresidentAdapter gridPresidentAdapter = new GridPresidentAdapter(this);
         gridPresidentAdapter.setListPresident(list);
         rvCategory.setAdapter(gridPresidentAdapter);
+    }
+
+    private void showRecylerCardView(){
+        rvCategory.setLayoutManager(new LinearLayoutManager(this));
+        CardViewPresidentAdapter cardViewPresidentAdapter= new  CardViewPresidentAdapter(this);
+        cardViewPresidentAdapter.setLisPresident(list);
+        rvCategory.setAdapter(cardViewPresidentAdapter);
     }
 }
