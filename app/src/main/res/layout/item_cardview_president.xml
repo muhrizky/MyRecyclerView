@@ -54,7 +54,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/btn_set_favorite"
-                android:textSize="11sp"
+                android:textSize="9sp"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:text="Favorite"
                 android:layout_weight="1"/>
